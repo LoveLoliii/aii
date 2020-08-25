@@ -23,3 +23,11 @@ compileKotlin {
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
+jar{
+    baseName="ai"
+    version="0.0.1"
+    manifest {
+        attributes "Mainfest-Version":1.0,
+            "Main-Class": 'Myloader.kt'
+    }
+}

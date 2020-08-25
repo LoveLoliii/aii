@@ -20,7 +20,7 @@ suspend fun main(args: Array<String>) {
     val qqId =  2329692460L;
     val password = ""
     val bot = Bot(qqId,password){
-        fileBasedDeviceInfo()
+        fileBasedDeviceInfo(ClassLoader.getSystemResource("device.json").path)
     }.alsoLogin()
     bot.subscribeMessages {
         "你好" reply "你好"
@@ -28,6 +28,7 @@ suspend fun main(args: Array<String>) {
             reply(At(sender as Member) +"geiyepa")
         }
         "吃饭" reply getReply("吃饭")
+        ""
           
     }
     bot.subscribeAlways<MemberMuteEvent> {
